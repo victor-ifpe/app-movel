@@ -12,7 +12,17 @@ export default function TelaListaContatos({ navigation }) {
         <View style={styles.container}>
 
             <View style={styles.cabecalho}>
-                <Text style={styles.titulo}>
+                <TouchableOpacity
+                    style={styles.botaoVoltar}
+                    onPress={() => navigation.navigate('TelaLogin')}
+                >
+                    <Ionicons
+                        name="arrow-back"
+                        size={30}
+                        color="#fff"
+                    />
+                </TouchableOpacity>
+                <Text style={styles.tituloPrincipal}>
                     Lista de Contatos
                 </Text>
                 <TouchableOpacity
@@ -28,45 +38,57 @@ export default function TelaListaContatos({ navigation }) {
             </View>
 
             {/* Contato 1 */}
-            <View style={styles.contato}>
-                <Ionicons
-                    name="person-circle-outline"
-                    size={50}
-                    color="#007AFF"
-                />
-                <View style={styles.informacoes}>
-                    <Text style={styles.nome}>Marcos Andrade</Text>
-                    <Text style={styles.nome}>81 988553424</Text>
+            <TouchableOpacity
+                onPress={() => navigation.navigate('TelaEdicaoContatos')}
+            >
+                <View style={styles.contato}>
+                    <Ionicons
+                        name="person-circle-outline"
+                        size={50}
+                        color="#007AFF"
+                    />
+                    <View style={styles.informacoes}>
+                        <Text style={styles.nome}>Marcos Andrade</Text>
+                        <Text style={styles.nome}>81 988553424</Text>
+                    </View>
                 </View>
-            </View>
+            </TouchableOpacity>
             <View style={styles.linha} />
 
             {/* Contato 2 */}
-            <View style={styles.contato}>
-                <Ionicons
-                    name="person-circle-outline"
-                    size={50}
-                    color="#007AFF"
-                />
-                <View style={styles.informacoes}>
-                    <Text style={styles.nome}>Patrícia Tavares</Text>
-                    <Text style={styles.nome}>81 998765332</Text>
+            <TouchableOpacity
+                onPress={() => navigation.navigate('TelaEdicaoContatos')}
+            >
+                <View style={styles.contato}>
+                    <Ionicons
+                        name="person-circle-outline"
+                        size={50}
+                        color="#007AFF"
+                    />
+                    <View style={styles.informacoes}>
+                        <Text style={styles.nome}>Patrícia Tavares</Text>
+                        <Text style={styles.nome}>81 998765332</Text>
+                    </View>
                 </View>
-            </View>
+            </TouchableOpacity>
             <View style={styles.linha} />
 
             {/* Contato 3 */}
-            <View style={styles.contato}>
-                <Ionicons
-                    name="person-circle-outline"
-                    size={50}
-                    color="#007AFF"
-                />
-                <View style={styles.informacoes}>
-                    <Text style={styles.nome}>Rodrigo Antunes</Text>
-                    <Text style={styles.nome}>81 987765525</Text>
+            <TouchableOpacity
+                onPress={() => navigation.navigate('TelaEdicaoContatos')}
+            >
+                <View style={styles.contato}>
+                    <Ionicons
+                        name="person-circle-outline"
+                        size={50}
+                        color="#007AFF"
+                    />
+                    <View style={styles.informacoes}>
+                        <Text style={styles.nome}>Rodrigo Antunes</Text>
+                        <Text style={styles.nome}>81 987765525</Text>
+                    </View>
                 </View>
-            </View>
+            </TouchableOpacity>
 
         </View>
     );
@@ -87,11 +109,19 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#addd',
         position: 'relative',
+        marginTop: 40,
+        marginBottom: 20,
     },
 
-    titulo: {
+    tituloPrincipal: {
         fontSize: 22,
         fontWeight: 'bold',
+        color: '#fff',
+    },
+
+    botaoVoltar: {
+        position: 'absolute',
+        left: 15,
     },
 
     botaoMais: {

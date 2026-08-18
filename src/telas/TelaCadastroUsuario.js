@@ -12,9 +12,8 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function TelaCadastroUsuario({ navigation }) {
   const [nome, setNome] = useState('');
-  const [cpf, setCPF] = useState('');
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+  const [telefone, setTelefone] = useState('');
 
   return (
     <View style={styles.container}>
@@ -22,7 +21,7 @@ export default function TelaCadastroUsuario({ navigation }) {
       <View style={styles.cabecalho}>
         <TouchableOpacity
           style={styles.botaoVoltar}
-          onPress={() => navigation.goBack()}
+          onPress={() => navigation.navigate('TelaLogin')}
         >
           <Ionicons
             name="arrow-back"
@@ -31,7 +30,7 @@ export default function TelaCadastroUsuario({ navigation }) {
           />
         </TouchableOpacity>
         <Text style={styles.tituloPrincipal}>
-          Cadastro de Usuário
+          Usuário
         </Text>
       </View>
 
@@ -47,15 +46,6 @@ export default function TelaCadastroUsuario({ navigation }) {
           onChangeText={setNome}
         />
 
-        {/* CPF */}
-        <Text style={styles.titulo}>CPF</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Digite seu cpf..."
-          value={cpf}
-          onChangeText={setCPF}
-        />
-
         {/* Email */}
         <Text style={styles.titulo}>Email</Text>
         <TextInput
@@ -65,13 +55,13 @@ export default function TelaCadastroUsuario({ navigation }) {
           onChangeText={setEmail}
         />
 
-        {/* Senha */}
-        <Text style={styles.titulo}>Senha</Text>
+        {/* Telefone */}
+        <Text style={styles.titulo}>Telefone</Text>
         <TextInput
           style={styles.input}
-          placeholder="Digite sua senha..."
-          value={senha}
-          onChangeText={setSenha}
+          placeholder="Digite seu telefone..."
+          value={telefone}
+          onChangeText={setTelefone}
         />
 
 
@@ -102,6 +92,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
+    marginTop: 40,
     marginBottom: 20,
   },
 
